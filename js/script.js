@@ -20,17 +20,17 @@ let funcOnLoad = function(context) {
 };
 
 let funcOnChange = function(context) {
-	$('#cep_pre').on('blur', function() {
+	document.getElementById("cep_pre").addEventListener('blur', (e) => {
 		if (!/^[0-9]{5}-[0-9]{3}$/.test(context.fields.cep_pre.value)) {
 			context.fields.cep_pre.setError('CEP incompleto');
 		}
 	});
-	$('#tel_principal').on('blur', function() {
-		if (!/\((\d{2})\) \d{4,5}-\d{4}/.test(context.fields.tel_principal.value)) {
+	document.getElementById("tel_principal").addEventListener('blur', (e) => {
+		if (!/\((\d{2});\) \d{4,5}-\d{4}/.test(context.fields.tel_principal.value)) {
 			context.fields.tel_principal.setError('Celular incompleto');
 		}
 	});
-	$('#cpf_do_lead').on('blur', function() {
+	document.getElementById("cpf_do_lead").addEventListener('blur', (e) => {
 		if (!CPF.validate(context.fields.cpf_do_lead.value)) {
 			context.fields.cpf_do_lead.setError('CPF Inválido');
 		}
