@@ -1,25 +1,38 @@
-let funcOnAction = function(context){
-	const mes = {
-			'Janeiro': '01',
-			'Fevereiro': '02',
-			'Março': '03',
-			'Abril': '04',
-			'Maio': '05',
-			'Junho': '06',
-			'Julho': '07',
-			'Agosto': '08',
-			'Setembro': '09',
-			'Outubro': '10',
-			'Novembro': '11',
-			'Dezembro': '12'
-		};
-		context.fields.data_nascimento.value = context.fields.Dropdown1.value + '/' + mes[context.fields.Dropdown2.value] + '/' + context.fields.Dropdown3.value;
+const mes = {
+	'Janeiro': '01',
+	'Fevereiro': '02',
+	'Março': '03',
+	'Abril': '04',
+	'Maio': '05',
+	'Junho': '06',
+	'Julho': '07',
+	'Agosto': '08',
+	'Setembro': '09',
+	'Outubro': '10',
+	'Novembro': '11',
+	'Dezembro': '12'
+};
+
+let funcOnAction = function(context) {
 };
 
 let funcOnLoad = function(context) {
+	console.log('OnLoad');
+	console.log(context);
+	context.fields.data_nascimento.value = context.fields.Dropdown1.value + '/' + mes[context.fields.Dropdown2.value] + '/' + context.fields.Dropdown3.value;
+};
+
+let funcOnView = function(context) {
+	console.log('OnView');
+	console.log(context);
 };
 
 let funcOnChange = function(context) {
+	console.log('OnChange');
+	console.log(context);
+
+	context.fields.data_nascimento.value = context.fields.Dropdown1.value + '/' + mes[context.fields.Dropdown2.value] + '/' + context.fields.Dropdown3.value;
+
 	let cep_pre = document.getElementById("cep_pre"),
 	tel_principal = document.getElementById("tel_principal"),
 	cpf_do_lead = document.getElementById("cpf_do_lead");
