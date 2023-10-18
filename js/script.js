@@ -17,14 +17,13 @@ let funcOnAction = function(context) {
 };
 
 let funcOnLoad = function(context) {
-	context.fields.data_nascimento.value = context.fields.Dropdown1.value + '/' + mes[context.fields.Dropdown2.value] + '/' + context.fields.Dropdown3.value;
 };
 
 let funcOnView = function(context) {
 };
 
 let funcOnChange = function(context) {
-	context.fields.data_nascimento.value = context.fields.Dropdown1.value + '/' + mes[context.fields.Dropdown2.value] + '/' + context.fields.Dropdown3.value;
+	context.fields.data_nascimento.value = context.fields.nasc_dia.value + '/' + mes[context.fields.nasc_mes.value] + '/' + context.fields.nasc_ano.value;
 
 	let cep_pre = document.getElementById("cep_pre"),
 	tel_principal = document.getElementById("tel_principal"),
